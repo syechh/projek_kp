@@ -7,7 +7,7 @@ if (isset($_POST['login'])){
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = mysqli_real_escape_string($koneksi, $_POST['password']);
 
-    $queryLogin = mysqli_query($koneksi, "SELECT * FROM users");
+    $queryLogin = mysqli_query($koneksi, "SELECT * FROM users WHERE username = $username");
 
     if (mysqli_num_rows($queryLogin) === 1){
       $row = mysqli_fetch_assoc($queryLogin);
