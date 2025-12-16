@@ -52,12 +52,18 @@
                 <p>Categories</p>
               </a>
             </li>
+            <?php
+            if(userLogin()['level'] != 3 && userLogin()['level'] != 2 && userLogin()['level'] != 4){
+            ?>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Stock Management</p>
               </a>
             </li>
+            <?php
+            }
+            ?>
           </ul>
         </li>
         
